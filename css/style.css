@@ -18,6 +18,56 @@
     margin: 5px;
     padding: 15px;
 }
+.border-secodary,.border-orange{
+    border:1px solid;
+    border-radius:10px
+
+}
+.border-secodary{
+    border-color: rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.border-orange{
+    border-color: #EB5757;
+    background-color: rgba(235, 87, 87,0.05);
+}
+
+.accuracy{
+    right:10px;
+    top:10px;
+    z-index: 999999;
+    position: absolute;
+}
+.description {
+    font-weight: 600;
+    line-height: 35px;
+}
+.qa{}
+.qa h4{
+    font-weight: 600;
+}
+.qa p{
+    color: rgba(0,0,0,0.5);
+}
+
+.hub-prices{}
+.hub-price{}
+.hub-price>div{
+    font-weight: 600;
+    font-size: 1.25em;
+    text-align: center;
+    word-wrap: break-word;
+}
+.hub-price-green{
+    color: green;
+}
+.hub-price-orange{
+    color: orange;
+}
+.hub-price-red{
+    color: red;
+}
 
 .footer-right-arrow:hover{
     color:#fff;

@@ -27,7 +27,7 @@ const displayAiHubs = (aiHubs) => {
               <img src="${aiHub.image}" class="card-img-top" alt="...">
               <div class="card-body">
                   <h4 class="card-title">Features</h4>
-                  <ol class="m-0 ps-4">
+                  <ol class="m-0 ps-4 text-left">
                   ${aiHub.features
                     .map((feature) => `<li class="my-2"> ${feature}</li>`)
                     .join("")}
@@ -66,38 +66,51 @@ const loadAiHubsDetails = async (id) => {
 
 const aiHubDetails = (aiHub) => {
   console.log(aiHub);
+  console.log("Features:",Object.values(aiHub.features));
   const aiHubDetails = document.getElementById("aihub-details");
-  const featuresList=
+  const featuresList= Object.values(aiHub.features);
   aiHubDetails.innerHTML = `
     <div class="hub-info col-md-5">
-        <h3>${aiHub.description}</h3>
-        <div class="hub-price-info row">
-            <div class="hub-price col-md-4 hub-price-green"> <div >$10/Month basic</div></div>
-            <div class="hub-price col-md-4 hub-price-orange"> <div >$10/Month basic</div></div>
-            <div class="hub-price col-md-4 hub-price-red"> <div >$10/Month basic</div></div>
+    <div class="p-4 border-orange">
+        <h3 class="description">${aiHub.description}</h3>
+        <div class="hub-prices my-3 row">
+            <div class="hub-price col-md-4 my-2 hub-price-green"> <div class="p-4 bg-white rounded-3" >$10/Month basic</div></div>
+            <div class="hub-price col-md-4 my-2 hub-price-orange"> <div class="p-4  bg-white rounded-3">$10/Month basic</div></div>
+            <div class="hub-price col-md-4 my-2 hub-price-red"> <div class="p-4  bg-white rounded-3">$10/Month basic</div></div>
         </div>
         <div class="hub-lists row">
             <div class="col-md-6">
-                <h2>Features</h2>
-                <ul>
-                    <li>Item One</li>                
-                    <li>Item Two</li>                
+                <h3>Features</h3>
+                <ul class="m-0 ps-3">
+                
+                ${featuresList
+                    .map((feature) => `<li class="my-2 text-secondary"> ${feature.feature_name}</li>`)
+                    .join("")}               
                 </ul>
             </div>
             <div class="col-md-6">
-            <h2>Integrations</h2>
-            <ul>
-                <li>Item One</li>                
-                <li>Item Two</li>                
-            </ul>
+                <h3>Integrations</h3>
+                <ul class="text-left ps-3">
+                ${aiHub.integrations?aiHub.integrations
+                    .map((integration) => `<li class="my-2 text-secondary"> ${integration}</li>`)
+                    .join(""):'<p class="text-secondary text-left">No Data Found</p>'}             
+                </ul>
+            </div>
         </div>
         </div>
     </div>
 
   
-  <div class="hub-image col-md-5">
-    <img src="${aiHub.image_link.length>0&&aiHub.image_link[0]}" alt="" class="w-100 rounded">
+  <div class="hub-image col-md-5 text-center">
+    <div class="p-4 border-secodary">
+        <img src="${aiHub.image_link.length>0&&aiHub.image_link[0]}" alt="" class="w-100 rounded">
+        <div class="qa mt-5">
+        ${aiHub.input_output_examples?aiHub.input_output_examples.map(example=>`<div>${example.input&&`<h4>${example.input}</h4>`} ${example.output?`<p class="text-secondary">${example.output}</p>`:`<p  class="text-secondary">No! Not Yet! Take a break!!!</p>`} </div>`).join(""):'<div><h4>Can you give any example?</h4><p  class="text-secondary">No! Not Yet! Take a break!!!</p></div>'}
+        </div>
+        ${aiHub.accuracy.score&&`<span class="accuracy btn btn-danger">${aiHub.accuracy.score*100}% accuracy</span>`}
+    </div>
   </div>
+   
     `;
 };
 
