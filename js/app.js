@@ -27,9 +27,8 @@ const loadUniverseAi = async (dataFilter) => {
 const displayAiHubs = (aiHubs) => {
   const aiContainer = document.getElementById("ai-container");
   const showMore = document.getElementById("show-more");
-  // Display 6 Ai Hubs only
-//   aiHubs = aiHubs.slice(0, 6);
-aiContainer.innerHTML = '';
+ 
+  aiContainer.innerHTML = '';
   //   Displays all Ai Hubs
   aiHubs.forEach((aiHub) => {
     const aiHubDiv = document.createElement("div");
@@ -124,4 +123,3 @@ const aiHubDetails = (aiHub) => {
 
 
 loadUniverseAi("initial");
-loadAiHubsDetails("01");
