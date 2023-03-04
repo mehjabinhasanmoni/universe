@@ -20,8 +20,8 @@
   <body>
     <header class="text-center m-5">
       <h1 class="m-5">AI Universe Hub</h1>
-      <button class="btn btn-danger btn-lg">Sort by Date</button>
-    </header>
+      <button id="data-sort" onclick="loadUniverseAi('sort')" class="btn btn-danger btn-lg">Sort by Date</button>
+    </header>  
     <main class="container">
       <!-- Cards Section-->
 
@@ -30,7 +30,7 @@
 
         <!-- Show More -->
         <div id="show-more" class="text-center m-5 btn-lg">
-          <div id="btn-show-all" class="btn btn-danger">Show More</div>
+          <div id="btn-show-all" onclick="loadUniverseAi('all')" class="btn btn-danger">Show More</div>
         </div>
       </section>
 

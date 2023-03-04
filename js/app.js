@@ -1,4 +1,4 @@
-const loadUniverseAi = async () => {
+const loadUniverseAi = async (dataFilter) => {
   const loading = document.getElementById("loader");
   loading.style.display = "flex";
   const url = `https://openapi.programming-hero.com/api/ai/tools`;
@@ -8,8 +8,20 @@ const loadUniverseAi = async () => {
   console.log("data", data);
   if (data.status) {
     loading.style.display = "none";
-    displayAiHubs(data.data.tools);
+    let dataArray=[];
+    if(dataFilter === 'initial'){
+      dataArray = data.data.tools.slice(0,6);
+    }
+    else if(dataFilter === 'all'){
+      dataArray = data.data.tools;
+
+    }
+    else{
+      dataArray = data.data.tools.sort((a,b)=>new Date(a.published_in)-new Date(b.published_in));
+    }
+    displayAiHubs(dataArray);
   }
+
 };
 
 const displayAiHubs = (aiHubs) => {
@@ -17,7 +29,7 @@ const displayAiHubs = (aiHubs) => {
   const showMore = document.getElementById("show-more");
   // Display 6 Ai Hubs only
 //   aiHubs = aiHubs.slice(0, 6);
-
+aiContainer.innerHTML = '';
   //   Displays all Ai Hubs
   aiHubs.forEach((aiHub) => {
     const aiHubDiv = document.createElement("div");
@@ -48,10 +60,7 @@ const displayAiHubs = (aiHubs) => {
   });
 };
 
-// Load Show More
-document
-  .getElementById("btn-show-all")
-  .addEventListener("click", function () {});
+
 
 // For Modal Show
 
@@ -66,7 +75,6 @@ const loadAiHubsDetails = async (id) => {
 
 const aiHubDetails = (aiHub) => {
   console.log(aiHub);
-  console.log("Features:",Object.values(aiHub.features));
   const aiHubDetails = document.getElementById("aihub-details");
   const featuresList= Object.values(aiHub.features);
   aiHubDetails.innerHTML = `
@@ -113,5 +121,7 @@ const aiHubDetails = (aiHub) => {
     `;
 };
 
-loadUniverseAi();
+
+
+loadUniverseAi("initial");
 loadAiHubsDetails("01");
