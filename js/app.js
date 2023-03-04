@@ -74,9 +74,8 @@ const aiHubDetails = (aiHub) => {
     <div class="p-4 border-orange">
         <h3 class="description">${aiHub.description}</h3>
         <div class="hub-prices my-3 row">
-            <div class="hub-price col-md-4 my-2 hub-price-green"> <div class="p-4 bg-white rounded-3" >$10/Month basic</div></div>
-            <div class="hub-price col-md-4 my-2 hub-price-orange"> <div class="p-4  bg-white rounded-3">$10/Month basic</div></div>
-            <div class="hub-price col-md-4 my-2 hub-price-red"> <div class="p-4  bg-white rounded-3">$10/Month basic</div></div>
+        ${aiHub.pricing?aiHub.pricing.map(price=>`<div class="hub-price col-md-4 my-2 hub-price-${price.plan.toLowerCase()}"> <div class="p-4 bg-white rounded-3" >${price.price}</div></div>`).join(""):`<div class="hub-price col-md-12 my-2"> <div class="p-4 bg-white rounded-3" >FREE of Cost</div></div>`}
+
         </div>
         <div class="hub-lists row">
             <div class="col-md-6">
@@ -107,7 +106,7 @@ const aiHubDetails = (aiHub) => {
         <div class="qa mt-5">
         ${aiHub.input_output_examples?aiHub.input_output_examples.map(example=>`<div>${example.input&&`<h4>${example.input}</h4>`} ${example.output?`<p class="text-secondary">${example.output}</p>`:`<p  class="text-secondary">No! Not Yet! Take a break!!!</p>`} </div>`).join(""):'<div><h4>Can you give any example?</h4><p  class="text-secondary">No! Not Yet! Take a break!!!</p></div>'}
         </div>
-        ${aiHub.accuracy.score&&`<span class="accuracy btn btn-danger">${aiHub.accuracy.score*100}% accuracy</span>`}
+        ${aiHub.accuracy.score?`<span class="accuracy btn btn-danger">${aiHub.accuracy.score*100}% accuracy</span>`:""}
     </div>
   </div>
    

@@ -1,61 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Universe Hub</title>
     <!-- BS Link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
     <!-- Font Awsome -->
     <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/90d218c767.css" crossorigin="anonymous"> -->
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header class="text-center m-5">
-        <h1 class="m-5"> AI Universe Hub </h1>
-        <button class="btn btn-danger btn-lg">Sort by Date</button>
+      <h1 class="m-5">AI Universe Hub</h1>
+      <button class="btn btn-danger btn-lg">Sort by Date</button>
     </header>
     <main class="container">
-          <!-- Cards Section-->
+      <!-- Cards Section-->
 
-        <section>
-          
-            <div id="ai-container" class="row row-cols-1 row-cols-md-3 g-4">
-                
-            </div>
+      <section>
+        <div id="ai-container" class="row row-cols-1 row-cols-md-3 g-4"></div>
 
-            <!-- Show More -->
-            <div id="show-more" class="text-center m-5 btn-lg">
-                <div id="btn-show-all" class="btn btn-danger">  Show More </div>
-            </div>
-    
-        </section>
-
-        <!-- Loader Section -->
-
-        <section  id="loader" class="loader-section align-items-center justify-content-center  position-absolute  "> 
-            <div class="spinner-border text-success" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-              <h3 class="ms-3">Please Wait...</h3>
-        </section>
-
-        <!-- Modal Section -->
-
-       
-
-  <!-- Modal -->
-  <div class="modal fade" id="aiHubModal" tabindex="-1" aria-labelledby="aiHubModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- Show More -->
+        <div id="show-more" class="text-center m-5 btn-lg">
+          <div id="btn-show-all" class="btn btn-danger">Show More</div>
         </div>
-        <div id="aihub-details" class="modal-body d-flex justify-content-center  my-5 py-5 row">
-            <!-- <div class="hub-info">
+      </section>
+
+      <!-- Loader Section -->
+
+      <section
+        id="loader"
+        class="loader-section align-items-center justify-content-center position-absolute"
+      >
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <h3 class="ms-3">Please Wait...</h3>
+      </section>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="aiHubModal"
+        tabindex="-1"
+        aria-labelledby="aiHubModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              id="aihub-details"
+              class="modal-body d-flex justify-content-center my-5 py-5 row"
+            >
+              <!-- <div class="hub-info">
                 <p>${description}</p>
                 <div class="hub-price-info">
                     <div class="hub-price">$10/Month basic</div>
@@ -68,24 +81,27 @@
               <div class="hub-image">
                 <img src=${logo} alt="" srcset="">
               </div> -->
+            </div>
+          </div>
         </div>
-        
       </div>
-    </div>
-  </div>
-
     </main>
     <footer class="footer m-5">
-        <h5>All sites reserves</h5>
-
+      <h5>All sites reserves</h5>
     </footer>
 
     <!-- BS Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Script -->
-    <script src="https://kit.fontawesome.com/90d218c767.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/90d218c767.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/app.js"></script>
-</body>
-
+  </body>
 </html>

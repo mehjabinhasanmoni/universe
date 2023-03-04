@@ -59,13 +59,13 @@
     text-align: center;
     word-wrap: break-word;
 }
-.hub-price-green{
+.hub-price-basic{
     color: green;
 }
-.hub-price-orange{
+.hub-price-pro{
     color: orange;
 }
-.hub-price-red{
+.hub-price-enterprise{
     color: red;
 }
 
