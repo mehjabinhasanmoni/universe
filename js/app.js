@@ -9,15 +9,19 @@ const loadUniverseAi = async (dataFilter) => {
   if (data.status) {
     loading.style.display = "none";
     let dataArray=[];
+    const btnShowAll = document.getElementById('btn-show-all');
     if(dataFilter === 'initial'){
       dataArray = data.data.tools.slice(0,6);
     }
     else if(dataFilter === 'all'){
       dataArray = data.data.tools;
+      btnShowAll.style.display = "none";
 
     }
     else{
       dataArray = data.data.tools.sort((a,b)=>new Date(a.published_in)-new Date(b.published_in));
+      
+      btnShowAll.style.display = "none";
     }
     displayAiHubs(dataArray);
   }
