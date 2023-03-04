@@ -59,13 +59,13 @@
     text-align: center;
     word-wrap: break-word;
 }
-.hub-price-basic{
+.hub-price:nth-child(1)>div{
     color: green;
 }
-.hub-price-pro{
+.hub-price:nth-child(2)>div{
     color: orange;
 }
-.hub-price-enterprise{
+.hub-price:nth-child(3)>div{
     color: red;
 }
 

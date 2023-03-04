@@ -74,7 +74,7 @@ const aiHubDetails = (aiHub) => {
     <div class="p-4 border-orange">
         <h3 class="description">${aiHub.description}</h3>
         <div class="hub-prices my-3 row">
-        ${aiHub.pricing?aiHub.pricing.map(price=>`<div class="hub-price col-md-4 my-2 hub-price-${price.plan.toLowerCase()}"> <div class="p-4 bg-white rounded-3" >${price.price}</div></div>`).join(""):`<div class="hub-price col-md-12 my-2"> <div class="p-4 bg-white rounded-3" >FREE of Cost</div></div>`}
+        ${aiHub.pricing?aiHub.pricing.map(price=>`<div class="hub-price col-md-4 my-2 hub-price-${price.plan.toLowerCase()}"> <div class="p-4 bg-white rounded-3" >${price.price=="0"?"FREE of Cost":price.price} ${price.plan}</div></div>`).join(""):`<div class="hub-price col-md-12 my-2"> <div class="p-4 bg-white rounded-3" >FREE of Cost</div></div>`}
 
         </div>
         <div class="hub-lists row">
